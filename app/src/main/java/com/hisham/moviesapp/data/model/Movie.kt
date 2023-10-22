@@ -1,7 +1,8 @@
-package com.hisham.moviesapp.data
+package com.hisham.moviesapp.data.model
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
-
+@Entity(tableName = "popular_movies")
 data class Movie(
     val id: Int,
     @SerializedName("overview")
