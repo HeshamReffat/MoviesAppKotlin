@@ -10,7 +10,6 @@ import javax.inject.Singleton
     CacheDataModel::class,
     DatabaseModule::class,
     LocalDataModule::class,
-    MovieModule::class,
     RemoteDataModule::class,
     RepositoryModule::class,
     UseCaseModule::class,

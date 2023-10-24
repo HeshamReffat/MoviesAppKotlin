@@ -10,18 +10,23 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class RepositoryModule(
-    private val movieRemoteDataSource: MovieRemoteDataSource,
-    private val movieLocalDataSource: MovieLocalDataSource,
-    private val movieCacheDataSource: MovieCacheDataSource
-) {
+class RepositoryModule {
+
     @Singleton
     @Provides
-    fun getRepositoryInstance(): MovieRepository {
+    fun provideMovieRepository(
+        movieRemoteDataSource: MovieRemoteDataSource,
+        movieLocalDataSource: MovieLocalDataSource,
+        movieCacheDataSource: MovieCacheDataSource
+
+    ):MovieRepository{
+
         return MovieRepositoryImpl(
             movieRemoteDataSource,
             movieLocalDataSource,
             movieCacheDataSource
         )
+
     }
+
 }
